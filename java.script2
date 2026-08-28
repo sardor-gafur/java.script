@@ -1,0 +1,15 @@
+
+
+function isPalindrome(str) {
+  // Remove non-alphanumeric characters and convert to lowercase
+  const cleanedStr = str.toLowerCase().replace(/[^a-z0-9]/g, '');
+  
+  // Reverse the cleaned string
+  const reversedStr = cleanedStr.split('').reverse().join('');
+  
+  return cleanedStr === reversedStr;
+}
+
+// Example usage:
+console.log(isPalindrome("A man, a plan, a canal: Panama")); // Output: true
+console.log(isPalindrome("hello world"));                   // Output: false
