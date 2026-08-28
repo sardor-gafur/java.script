@@ -1,0 +1,15 @@
+function getAdultNames(people) {
+  return people
+    .filter(person => person.age >= 18)
+    .map(person => person.name.toUpperCase());
+}
+
+// Example usage:
+const peopleList = [
+  { name: "Alice", age: 17 },
+  { name: "Bob", age: 22 },
+  { name: "Charlie", age: 15 },
+  { name: "Diana", age: 19 }
+];
+
+console.log(getAdultNames(peopleList)); // Output: ["BOB", "DIANA"]
