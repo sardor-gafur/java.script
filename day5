@@ -1,0 +1,18 @@
+function countFrequencies(arr) {
+  const frequencyMap = {};
+
+  for (const item of arr) {
+    if (frequencyMap[item]) {
+      frequencyMap[item] += 1;
+    } else {
+      frequencyMap[item] = 1;
+    }
+  }
+
+  return frequencyMap;
+}
+
+// Example usage:
+const fruits = ["apple", "banana", "apple", "orange", "banana", "apple"];
+console.log(countFrequencies(fruits)); 
+// Output: { apple: 3, banana: 2, orange: 1 }
