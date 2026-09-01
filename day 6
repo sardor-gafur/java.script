@@ -1,0 +1,18 @@
+function removeDuplicates(arr) {
+  const uniqueItems = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (!uniqueItems.includes(arr[i])) {
+      uniqueItems.push(arr[i]);
+    }
+  }
+
+  return uniqueItems;
+}
+
+// Alternative modern approach using Set:
+// const removeDuplicates = (arr) => [...new Set(arr)];
+
+// Example usage:
+const numbers = [1, 2, 2, 3, 4, 4, 4, 5, 1];
+console.log(removeDuplicates(numbers)); // Output: [1, 2, 3, 4, 5]
