@@ -1,0 +1,121 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+
+        String ism = "Sardor";
+        int parol = 1234;
+        double balans = 1500000;
+
+        System.out.println("================================");
+        System.out.println("        JAVA BANK TIZIMI");
+        System.out.println("================================");
+
+        System.out.print("Ismingizni kiriting: ");
+        String kiritilganIsm = input.nextLine();
+
+        System.out.print("Parolni kiriting: ");
+        int kiritilganParol = input.nextInt();
+
+        if (!kiritilganIsm.equals(ism) || kiritilganParol != parol) {
+            System.out.println("❌ Ism yoki parol noto‘g‘ri!");
+            input.close();
+            return;
+        }
+
+        System.out.println("\n✅ Tizimga muvaffaqiyatli kirdingiz!");
+
+        while (true) {
+
+            System.out.println("\n================================");
+            System.out.println("              MENU");
+            System.out.println("================================");
+            System.out.println("1. Balansni ko‘rish");
+            System.out.println("2. Pul qo‘shish");
+            System.out.println("3. Pul yechish");
+            System.out.println("4. Mijoz ma’lumotlari");
+            System.out.println("5. Parolni o‘zgartirish");
+            System.out.println("0. Chiqish");
+            System.out.println("================================");
+
+            System.out.print("Tanlang: ");
+            int tanlov = input.nextInt();
+
+            switch (tanlov) {
+
+                case 1:
+                    System.out.println("\n💰 Sizning balansingiz:");
+                    System.out.println(balans + " so‘m");
+                    break;
+
+                case 2:
+                    System.out.print("\nQo‘shiladigan pul: ");
+                    double pul = input.nextDouble();
+
+                    if (pul > 0) {
+                        balans += pul;
+                        System.out.println("✅ Hisobingiz to‘ldirildi!");
+                        System.out.println("Yangi balans: " + balans + " so‘m");
+                    } else {
+                        System.out.println("❌ Noto‘g‘ri summa!");
+                    }
+                    break;
+
+                case 3:
+                    System.out.print("\nYechiladigan pul: ");
+                    double yechish = input.nextDouble();
+
+                    if (yechish <= 0) {
+                        System.out.println("❌ Noto‘g‘ri summa!");
+
+                    } else if (yechish > balans) {
+                        System.out.println("❌ Hisobingizda yetarli mablag‘ yo‘q!");
+
+                    } else {
+                        balans -= yechish;
+                        System.out.println("✅ Pul yechildi!");
+                        System.out.println("Qolgan balans: " + balans + " so‘m");
+                    }
+                    break;
+
+                case 4:
+                    System.out.println("\n👤 MIJOZ MA’LUMOTLARI");
+                    System.out.println("----------------------------");
+                    System.out.println("Ism: " + ism);
+                    System.out.println("Hisob raqami: 20260904");
+                    System.out.println("Balans: " + balans + " so‘m");
+                    break;
+
+                case 5:
+                    System.out.print("\nEski parolni kiriting: ");
+                    int eskiParol = input.nextInt();
+
+                    if (eskiParol == parol) {
+
+                        System.out.print("Yangi parolni kiriting: ");
+                        int yangiParol = input.nextInt();
+
+                        parol = yangiParol;
+
+                        System.out.println("✅ Parol muvaffaqiyatli o‘zgartirildi!");
+
+                    } else {
+                        System.out.println("❌ Eski parol noto‘g‘ri!");
+                    }
+                    break;
+
+                case 0:
+                    System.out.println("\n👋 Tizimdan chiqdingiz.");
+                    System.out.println("Bank xizmatidan foydalanganingiz uchun rahmat!");
+                    input.close();
+                    return;
+
+                default:
+                    System.out.println("❌ Bunday menyu mavjud emas!");
+            }
+        }
+    }
+}
