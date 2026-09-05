@@ -1,0 +1,41 @@
+function capitalizeWords(sentence) {
+  if (!sentence) return '';
+
+  const words = sentence.split(' ');
+  const capitalized = [];
+
+  for (let i = 0; i < words.length; i++) {
+    const word = words[i];
+    if (word.length > 0) {
+      capitalized.push(word[0].toUpperCase() + word.slice(1));
+    } else {
+      capitalized.push('');
+    }
+  }
+
+  return capitalized.join(' ');
+}
+
+// Example usage:
+console.log(capitalizeWords("hello world from javascript")); 
+// Output: "Hello World From Javascript"function capitalizeWords(sentence) {
+  if (!sentence) return '';
+
+  const words = sentence.split(' ');
+  const capitalized = [];
+
+  for (let i = 0; i < words.length; i++) {
+    const word = words[i];
+    if (word.length > 0) {
+      capitalized.push(word[0].toUpperCase() + word.slice(1));
+    } else {
+      capitalized.push('');
+    }
+  }
+
+  return capitalized.join(' ');
+}
+
+// Example usage:
+console.log(capitalizeWords("hello world from javascript")); 
+// Output: "Hello World From Javascript"
