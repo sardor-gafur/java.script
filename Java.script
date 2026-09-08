@@ -1,0 +1,46 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("=== STUDENT DASTURI ===");
+
+        System.out.print("Ismingiz: ");
+        String ism = input.nextLine();
+
+        System.out.print("Yoshingiz: ");
+        int yosh = input.nextInt();
+
+        System.out.print("Matematika bali: ");
+        int matematika = input.nextInt();
+
+        System.out.print("Ingliz tili bali: ");
+        int ingliz = input.nextInt();
+
+        System.out.print("Informatika bali: ");
+        int informatika = input.nextInt();
+
+        double ortacha = (matematika + ingliz + informatika) / 3.0;
+
+        System.out.println("\n--- NATIJA ---");
+        System.out.println("Ism: " + ism);
+        System.out.println("Yosh: " + yosh);
+        System.out.println("O'rtacha ball: " + ortacha);
+
+        if (ortacha >= 90) {
+            System.out.println("Baho: A 🏆");
+        } else if (ortacha >= 80) {
+            System.out.println("Baho: B 👍");
+        } else if (ortacha >= 70) {
+            System.out.println("Baho: C 🙂");
+        } else if (ortacha >= 60) {
+            System.out.println("Baho: D");
+        } else {
+            System.out.println("Baho: F ❌");
+        }
+
+        input.close();
+    }
+}
