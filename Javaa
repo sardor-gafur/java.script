@@ -1,0 +1,59 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        Random random = new Random();
+
+        int player = 0;
+        int computer = 0;
+
+        System.out.println("🏁 JAVA CAR RACE 🏁");
+        System.out.println("Sizning mashinangiz: 🚗");
+        System.out.println("Kompyuter: 🏎️");
+
+        System.out.println("\nPoygani boshlash uchun ENTER bosing!");
+        scanner.nextLine();
+
+        for (int i = 1; i <= 10; i++) {
+
+            int playerSpeed = random.nextInt(20) + 1;
+            int computerSpeed = random.nextInt(20) + 1;
+
+            player += playerSpeed;
+            computer += computerSpeed;
+
+            System.out.println("\n--- " + i + "-tur ---");
+
+            System.out.println("🚗 Siz: +" + playerSpeed + " km");
+            System.out.println("🏎️ Kompyuter: +" + computerSpeed + " km");
+
+            System.out.println("Siz:       " + "🚗".repeat(Math.min(player / 5, 20)));
+            System.out.println("Kompyuter: " + "🏎️".repeat(Math.min(computer / 5, 20)));
+
+            System.out.println("Masofa: Siz " + player +
+                    " km | Kompyuter " + computer + " km");
+
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+        }
+
+        System.out.println("\n🏁🏁🏁 FINISH 🏁🏁🏁");
+
+        if (player > computer) {
+            System.out.println("🎉 TABRIKLAYMAN! SIZ YUTDINGIZ! 🚗🏆");
+        } else if (computer > player) {
+            System.out.println("😢 Kompyuter yutdi! 🏎️🏆");
+        } else {
+            System.out.println("🤝 Durrang!");
+        }
+
+        scanner.close();
+    }
+}
