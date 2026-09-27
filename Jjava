@@ -1,0 +1,13 @@
+public class Main {
+    public static void main(String[] args) {
+        // Konsolga xabar chiqarish
+        System.out.println("Salom! Java dasturlash tiliga xush kelibsiz.");
+        
+        // Oddiy hisob-kitob
+        int a = 15;
+        int b = 25;
+        int yigindi = a + b;
+        
+        System.out.println("Yig'indi: " + yigindi);
+    }
+}
